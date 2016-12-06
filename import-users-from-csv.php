@@ -47,7 +47,7 @@ class IS_IU_Import_Users {
 	 *
 	 * @since 0.1
 	 **/
-	public function init() {
+	public static function init() {
 		add_action( 'admin_menu', array( __CLASS__, 'add_admin_pages' ) );
 		add_action( 'init', array( __CLASS__, 'process_csv' ) );
 
@@ -61,7 +61,7 @@ class IS_IU_Import_Users {
 	 *
 	 * @since 0.1
 	 **/
-	public function add_admin_pages() {
+	public static function add_admin_pages() {
 		add_users_page( __( 'Import From CSV' , 'import-users-from-csv'), __( 'Import From CSV' , 'import-users-from-csv'), 'create_users', 'import-users-from-csv', array( __CLASS__, 'users_page' ) );
 	}
 
@@ -70,7 +70,7 @@ class IS_IU_Import_Users {
 	 *
 	 * @since 0.1
 	 **/
-	public function process_csv() {
+	public static function process_csv() {
 		if ( isset( $_POST['_wpnonce-is-iu-import-users-users-page_import'] ) ) {
 			check_admin_referer( 'is-iu-import-users-users-page_import', '_wpnonce-is-iu-import-users-users-page_import' );
 
@@ -112,7 +112,7 @@ class IS_IU_Import_Users {
 	 *
 	 * @since 0.1
 	 **/
-	public function users_page() {
+	public static function users_page() {
 		if ( ! current_user_can( 'create_users' ) )
 			wp_die( __( 'You do not have sufficient permissions to access this page.' , 'import-users-from-csv') );
 ?>
