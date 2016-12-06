@@ -1,0 +1,13 @@
+{
+    "name": "rb-cohen/import-users-from-csv",
+    "description": "Fork to update and composer-ize import-users-from-csv plugin",
+    "type": "wordpress-plugin",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Arron Woods",
+            "email": "arron@copiadigital.co.uk"
+        }
+    ],
+    "require": {}
+}
